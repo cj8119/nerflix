@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    background: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block;
+}
+
+.topbar {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    height: 90px;
+}
+
+.hero {
+    position: relative;
+    height: 70vh;
+    background: url('nerflix-background.jpg') center 0 / cover no-repeat;
+    display: block;
+    padding: 30px 0 40px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 10vh auto 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 0 0 16px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #ccc;
+    margin: 0 0 20px;
+}
+
+.hero-content h3 {
+    font-size: 18px;
+    color: #ddd;
+    margin: 0;
+}
+
+.category {
+    margin: 40px 0;
+    overflow: visible;
+}
+
+.category h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.row {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+    gap: 15px;
+    padding: 20px 0 20px 20px;
+    scroll-behavior: auto;
+    cursor: grab;
+    user-select: none;
+}
+
+.row.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.card {
+    min-width: 200px;
+    height: 280px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1f1c2c, #3a1c2c);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    z-index: 10;
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.8),
+        0 0 18px rgba(255, 0, 80, 0.6),
+        0 0 6px rgba(255, 0, 120, 0.4);
+}
+
+.card:focus {
+    outline: none;
+    transform: scale(1.08);
+    z-index: 20;
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.9),
+        0 0 25px rgba(255, 0, 80, 0.9);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.items {
+    font-size: 13px;
+    color: #ccc;
+}
+
+.items div {
+    margin-bottom: 6px;
+}
+
+.row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.row::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #888;
+    border-top: 1px solid #222;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

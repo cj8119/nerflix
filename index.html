@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NERflix – Magyar politikai korrupció, jogállam és média archívum</title>
+    <meta name="description" content="NERflix: 16 évadon át. Böngéssz több száz magyar politikai cikk között – korrupció, médiapropaganda, jogállami visszaélések és társadalmi károkozás témakörökben." />
+    <meta name="keywords" content="NER, Orbán, korrupció, jogállam, Magyarország, politika, média, propaganda, cikkgyűjtemény" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://cj8119.github.io/nerflix/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cj8119.github.io/nerflix/" />
+    <meta property="og:title" content="NERflix – Magyar politikai archívum" />
+    <meta property="og:description" content="16 évad. Egy rendszer. Végtelen epizód. Böngéssz több száz magyar politikai cikk között egy helyen." />
+    <meta property="og:image" content="https://cj8119.github.io/nerflix/nerflix-background.jpg" />
+    <meta property="og:locale" content="hu_HU" />
+    <meta property="og:site_name" content="NERflix" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NERflix – Magyar politikai archívum" />
+    <meta name="twitter:description" content="16 évad. Egy rendszer. Végtelen epizód. Böngéssz több száz magyar politikai cikk között egy helyen." />
+    <meta name="twitter:image" content="https://cj8119.github.io/nerflix/nerflix-background.jpg" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NERflix",
+      "url": "https://cj8119.github.io/nerflix/",
+      "description": "Magyar politikai cikkek és videók archívuma: korrupció, médiamanipuláció, jogállami visszaélések és társadalmi károkozás témakörökben.",
+      "inLanguage": "hu",
+      "publisher": {
+        "@type": "Organization",
+        "name": "NERflix",
+        "url": "https://cj8119.github.io/nerflix/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cj8119.github.io/nerflix/nerflix-logo.png"
+        }
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://cj8119.github.io/nerflix/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "NERflix – Magyar politikai archívum",
+      "url": "https://cj8119.github.io/nerflix/",
+      "description": "Több mint több száz magyar politikai cikk és forrás kategorizálva: Korrupció, Média és propaganda, Jogállam, Társadalomi károkozás, Külpolitika.",
+      "inLanguage": "hu",
+      "about": [
+        { "@type": "Thing", "name": "Korrupció" },
+        { "@type": "Thing", "name": "Média és propaganda" },
+        { "@type": "Thing", "name": "Jogállam" },
+        { "@type": "Thing", "name": "Külpolitika" }
+      ],
+      "isPartOf": { "@type": "WebSite", "url": "https://cj8119.github.io/nerflix/" }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="hero" role="banner">
+    <div class="topbar">
+        <a href="/" aria-label="NERflix főoldal">
+            <img src="nerflix-logo.png" class="logo" alt="NERflix logó" width="281" height="90" />
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="hero-content">
+            <h1>16 évad. Egy rendszer. Végtelen epizód.</h1>
+            <p>Új részek hetente. A fordulatok garantáltak.</p>
+            <h3>Ha eddig lemaradtál, most bepótolhatod az összes évadot egy helyen.</h3>
+        </div>
+    </div>
+</header>
+
+<main id="app" role="main" aria-label="Cikkek kategóriák szerint"></main>
+
+<footer class="footer" role="contentinfo">
+    ©2026 | Oldalt készítette: CJ |
+    Adatbázis:
+    <a href="https://nerlist.hu" target="_blank" rel="noopener noreferrer">nerlist.hu</a> |
+    <a href="https://creativecommons.org/public-domain/cc0" target="_blank" rel="noopener noreferrer">Licenc</a>
+</footer>
+
+<script src="db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
