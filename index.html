@@ -108,8 +108,19 @@
     Adatbázis:
     <a href="https://nerlist.hu" target="_blank" rel="noopener noreferrer">nerlist.hu</a> |
     <a href="https://creativecommons.org/public-domain/cc0" target="_blank" rel="noopener noreferrer">Licenc</a>
+    <br><br>
+    <span id="gc-views"></span>
+    <script>
+        fetch('https://nerflix.goatcounter.com/counter//nerflix.json')
+            .then(r => r.json())
+            .then(d => {
+                document.getElementById('gc-views').textContent = 'Látogatók ma: ' + d.count_unique + ', összesen: ' + d.count_unique_total;
+            })
+            .catch(() => {});
+    </script>
 </footer>
 
+<script data-goatcounter="https://nerflix.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="db.js"></script>
 <script src="app.js"></script>
 <script>
