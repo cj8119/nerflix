@@ -13,14 +13,14 @@ function groupByCategory(data) {
         .sort((a, b) => b.id - a.id)
         .filter(item =>
             item.title && item.title.trim() !== '' &&
-            item.category && item.category.trim() !== '' &&
             item.items && item.items.some(i =>
                 i.text && i.text.trim() !== '' &&
                 i.url && i.url.trim() !== ''
             )
         )
         .forEach(item => {
-            const catName = categories[item.category] || 'Egyéb';
+            const resolvedCategory = (!item.category || item.category.trim() === '') ? '1' : item.category;
+            const catName = categories[resolvedCategory] || 'Egyéb';
             if (!map[catName]) map[catName] = [];
             map[catName].push(item);
         });

@@ -10,12 +10,21 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://cj8119.github.io/nerflix/" />
 
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cj8119.github.io/nerflix/" />
     <meta property="og:title" content="NERflix – Magyar politikai archívum" />
     <meta property="og:description" content="16 évad. Egy rendszer. Végtelen epizód. Böngéssz több száz magyar politikai cikk között egy helyen." />
-    <meta property="og:image" content="https://cj8119.github.io/nerflix/nerflix-background.jpg" />
+    <meta property="og:image" content="https://cj8119.github.io/nerflix/nerflix-og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="hu_HU" />
     <meta property="og:site_name" content="NERflix" />
 
@@ -23,7 +32,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="NERflix – Magyar politikai archívum" />
     <meta name="twitter:description" content="16 évad. Egy rendszer. Végtelen epizód. Böngéssz több száz magyar politikai cikk között egy helyen." />
-    <meta name="twitter:image" content="https://cj8119.github.io/nerflix/nerflix-background.jpg" />
+    <meta name="twitter:image" content="https://cj8119.github.io/nerflix/nerflix-og-image.jpg" />
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -87,6 +96,7 @@
             <h1>16 évad. Egy rendszer. Végtelen epizód.</h1>
             <p>Új részek hetente. A fordulatok garantáltak.</p>
             <h3>Ha eddig lemaradtál, most bepótolhatod az összes évadot egy helyen.</h3>
+            <p class="evadzaro">Évadzáró epizód: <span class="countdown-inline" id="evadzaro-countdown"></span></p>
         </div>
     </div>
 </header>
@@ -102,5 +112,29 @@
 
 <script src="db.js"></script>
 <script src="app.js"></script>
+<script>
+(function () {
+    const target = new Date('2026-04-11T22:00:00Z');
+    const el = document.getElementById('evadzaro-countdown');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function update() {
+        const diff = target - new Date();
+        if (diff <= 0) {
+            el.textContent = 'LEJÁRT';
+            return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        el.textContent = pad(d) + 'n ' + pad(h) + 'ó ' + pad(m) + 'p ' + pad(s) + 'mp';
+    }
+
+    update();
+    setInterval(update, 1000);
+})();
+</script>
 </body>
 </html>
