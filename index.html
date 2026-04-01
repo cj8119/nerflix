@@ -111,12 +111,18 @@
     <br><br>
     <span id="gc-views"></span>
     <script>
-        fetch('https://nerflix.goatcounter.com/counter//nerflix.json')
-            .then(r => r.json())
-            .then(d => {
-                document.getElementById('gc-views').textContent = 'Látogatók ma: ' + d.count_unique + ', összesen: ' + d.count_unique_total;
-            })
-            .catch(() => {});
+        var t = setInterval(function () {
+            if (window.goatcounter && window.goatcounter.get_data) {
+                clearInterval(t);
+                var path = encodeURIComponent(window.goatcounter.get_data()['p']);
+                fetch('https://nerflix.goatcounter.com/counter/' + path + '.json')
+                    .then(function (r) { return r.json(); })
+                    .then(function (d) {
+                        document.getElementById('gc-views').textContent = 'Összes oldalmegtekintés: ' + d.count;
+                    })
+                    .catch(function () {});
+            }
+        }, 100);
     </script>
 </footer>
 
